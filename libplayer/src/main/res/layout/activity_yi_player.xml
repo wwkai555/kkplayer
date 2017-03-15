@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+            name="errorMsg"
+            type="java.lang.String"/>
+
+        <variable
+            name="showError"
+            type="java.lang.Boolean"/>
+
+        <variable
+            name="showOtherPlayer"
+            type="java.lang.Boolean"/>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        android:orientation="vertical">
+
+        <com.yi.player.widget.YiPlayerView
+            android:id="@+id/videoPlayer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:clickable="@{!showError}"
+            android:onClick="onPlayerClick"/>
+
+        <LinearLayout
+            android:id="@+id/llBackLayout"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:background="@color/transparent">
+
+            <ImageView
+                android:id="@+id/imgBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:onClick="onBackClick"
+                android:padding="15dp"
+                android:src="@drawable/ic_back"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvError"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:gravity="center"
+                android:text="@{errorMsg}"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:visibility="@{showError ? View.VISIBLE:View.GONE}"/>
+
+            <Button
+                android:id="@+id/tvSwitchPlayer"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/btn_player_tip_bg"
+                android:onClick="switchPlayer"
+                android:paddingEnd="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingStart="10dp"
+                android:text="@string/phone_player"
+                android:textColor="@color/btn_green"
+                android:textSize="12sp"
+                android:visibility="@{showOtherPlayer ? View.VISIBLE:View.GONE}"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>

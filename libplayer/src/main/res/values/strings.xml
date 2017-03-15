@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">libplayer</string>
+    <string name="phone_player">phone player</string>
+    <string name="video_loading">loading video</string>
+    <string name="video_error">Video not available</string>
+    <string name="video_malformed">video error, malformed</string>
+    <string name="video_short">This video is too short.</string>
+    <string name="video_time_out">video timeout error</string>
+    <string name="video_unknown_error">unknown playback error</string>
+    <string name="video_unsupported">Unsupported video format</string>
+</resources>

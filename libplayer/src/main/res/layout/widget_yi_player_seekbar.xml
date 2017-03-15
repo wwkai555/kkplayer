@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="playTime"
+            type="Long"/>
+
+        <variable
+            name="allTime"
+            type="Long"/>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent">
+
+        <TextView
+            android:id="@+id/tvPlayTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/white_50_percent"
+            android:textSize="11sp"
+            app:timeFormat="@{playTime}"/>
+
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/tvPlayTime"
+            android:layout_toRightOf="@+id/tvPlayTime"
+            android:layout_toStartOf="@+id/tvAllTime"
+            android:layout_toLeftOf="@+id/tvAllTime"
+            android:maxHeight="50dp"
+            android:thumbOffset="7dp"
+            android:progressDrawable="@drawable/yi_seekbar_bg"
+            android:thumb="@drawable/yi_seekbar_thumb"
+            app:max="@{allTime}"
+            app:seekProgress="@{playTime}"/>
+
+        <TextView
+            android:id="@+id/tvAllTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:textColor="@color/white_50_percent"
+            android:textSize="11sp"
+            app:timeFormat="@{allTime}"/>
+
+    </RelativeLayout>
+</layout>
